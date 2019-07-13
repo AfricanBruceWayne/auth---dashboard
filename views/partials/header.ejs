@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auth &mdash; Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/landing-1.css">
+    <link rel="stylesheet" href="/stylesheets/landing-2.css">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
+                <div class="container">
+                  <a class="navbar-brand" href="#">Ngcweti</a>
+                  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><i class="ion-navicon"></i></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="probootstrap-navbar">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#section-features">Features</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#section-reviews">Reviews</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#section-pricing">Pricing</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#section-faq">FAQ</a></li>
+                    <% if(!currentUser){ %>
+                      <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0"><a class="nav-link" href="#" target="_blank"><span class="pb_rounded-4 px-4">Get Started</span></a></li>
+                      <li><a href="/login">Log In</a></li>
+                    <% } else { %>
+                      <li class="nav-item cta-btn ml-xl-2 ml-lg-2 ml-md-0 ml-sm-0 ml-0"><a class="nav-link" href="#" target="_blank"><span class="pb_rounded-4 px-4">Signed In As <%= currentUser.username %></span></a></li>
+                      <li><a href="/logout">Logout</a></li>
+                    <% } %>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <!-- END nav -->     
+       
+
